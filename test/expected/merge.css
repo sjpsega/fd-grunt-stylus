@@ -1,0 +1,24 @@
+/* create by stylus! */
+/*!
+ * 加工定制-我要加工(买家)
+ * @author jianping.shenjp
+ * @version 
+ * !!cmd:compress=true
+ * */
+ 
+/* lib & sys */
+@import url(http://style.china.alibaba.com/fdevlib/css/fdev-v4/core/fdev-wide.css);
+
+/*module & widget*/
+@import url(http://style.china.alibaba.com/sys/css/universal/alibar/standard-v4-min.css);
+@import url(http://style.china.alibaba.com/sys/css/universal/masthead/standard-v4-min.css);
+@import url(http://style.china.alibaba.com/sys/css/universal/footer/standard-v0.css);
+@import url(http://style.china.alibaba.com/sys/css/dpl/dpl-merge.css);
+@import url(http://style.china.alibaba.com/app/manufacture/css/module/dpl-extend.css);
+@import url(http://style.china.alibaba.com/app/manufacture/css/global/common.css);
+@import url(http://style.china.alibaba.com/app/manufacture/css/module/select.css);
+/*page*/
+@import url(http://style.china.alibaba.com/app/manufacture/css/manulib/module/mod-baoming.css);
+@import url(http://style.china.alibaba.com/app/manufacture/css/manulib/module/quoted-price-step.css);
+@import url(http://style.china.alibaba.com/app/manufacture/css/manulib/page/saler/mymanu/main.css);
+

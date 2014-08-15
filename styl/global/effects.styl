@@ -1,0 +1,50 @@
+@import 'utils.styl'
+sliding-door(
+       class = '',
+       height = 32px, 
+       radius = 3px,
+       image-url = '../img/btn-w.png',
+       image-y = 0
+    )
+    display: inline-block; 
+    overflow: hidden; 
+    height: height; 
+    line-height: height; 
+    text-decoration: none !important;
+    l = '.' + class + -l
+    r = '.' + class + -r
+    {l},{r}
+        float: left; 
+        height: 100%; 
+        background-repeat: no-repeat;
+        background-image: url(image-url);
+    {l}
+        padding-left: radius; background-position: left image-y; 
+    {r}
+        width: radius; background-position: right image-y; 
+
+sliding-door-height(height)    
+    height:height
+    line-height:height
+
+sliding-door-radius(class,radius)
+    l = '.' + class + -l
+    r = '.' + class + -r
+    {l}
+        padding-left:radius 
+    {r}
+        width: radius
+sliding-door-image-url(class,image-url)
+    l = '.' + class + -l
+    r = '.' + class + -r
+    {l},{r}
+        background-image: url(image-url);
+sliding-door-image-y(class,image-y)
+    l = '.' + class + -l
+    r = '.' + class + -r
+    {l}
+        background-position: left image-y; 
+    {r}
+        background-position: right image-y; 
+
+

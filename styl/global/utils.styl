@@ -1,0 +1,122 @@
+vendor(prop, args, only = null, ignore = null)
+    for prefix in webkit moz o ms official
+        unless (only and !(prefix in only)) or (ignore and prefix in ignore)
+            if official == prefix
+                {prop}: args
+            else
+                {'-' + prefix + '-' + prop}: args
+
+border-radius()
+     vendor('border-radius', arguments, webkit moz official )
+box-shadow()
+     vendor('box-shadow', arguments, webkit moz official )
+
+clearfix()
+    zoom: 1;
+    &:after
+        content:"\0020";
+        display:block;
+        height:0;
+        clear:both;
+    
+-float(value)
+    if(value == none)
+        float:none
+    else
+        float: value
+        display:inline
+
+-display(value)
+    if value == inline-block
+        inline-block()
+    else
+        display: value
+
+-position(value)
+    if value == relative
+        position:relative;
+        zoom:1;
+    else
+        position:value
+
+block-center()
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+columns(column-span,column-width)
+    float:left;
+    margin-right:$gird-gutter-width;
+    width: columnSpan * (columnWidth + $gird-gutter-width) - $gird-gutter-width;
+
+inline-block()
+    *display:inline;
+    display:inline-block; 
+    zoom:1;
+
+
+hover-link()
+    text-decoration: none
+    &:hover
+        text-decoration: underline
+
+breakword()
+    word-wrap:break-word
+    overflow:hidden
+
+ellipsis(no-wrap=true) 
+    if no-wrap 
+        white-space: nowrap 
+    
+    overflow: hidden
+    text-overflow:ellipsis
+
+prefix(property, value, ie-value=false)
+    -webkit-{property}:  value
+    -o-{property}:       value
+    -khtml-{property}:   value
+    if ie-value
+        -ms-{property}:  ie-value
+    else 
+        -ms-{property}:  value
+    
+    {property}:          value
+
+opacity(opacity = 1) 
+    filter:          unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=' + opacity*100 + ')');
+    -khtml-opacity:  opacity
+    -moz-opacity:    opacity
+    opacity:         opacity
+
+size(height=5px, width=5px) 
+    height: height;
+    width: width;
+
+square(size=5px)
+	size(size, size)
+
+icon(font-size=12px)
+    inline-block();
+    font-size:font-size;
+
+info-list(line-height=20)
+    ellipsis()
+    line-height : line-height
+
+/*
+* 横线
+* type(类型):dashed\solid
+* color(颜色)
+* space(上下间隔)
+*/
+type-line(type=dashed, color=#f0f0f0,space=10px)
+    padding-top: space
+    margin-top: space
+    border-top: 1px type color
+
+//设置字体为雅黑字体
+font-yh()
+    font-family:\5FAE\8F6F\96C5\9ED1, \9ED1\4F53,  \6587\6CC9\9A7F\6B63\9ED1\4F53,\534E\6587\7EC6\9ED1;
+    font-weight:400; 
+
+    
